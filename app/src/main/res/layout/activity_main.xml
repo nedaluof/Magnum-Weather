@@ -30,17 +30,6 @@
                 android:textSize="22sp"
                 android:textStyle="bold"
                 tools:ignore="RelativeOverlap" />
-
-            <ImageButton
-                android:id="@+id/img_btn_settings"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_margin="8dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_setting" />
-
         </RelativeLayout>
 
     </com.google.android.material.appbar.AppBarLayout>

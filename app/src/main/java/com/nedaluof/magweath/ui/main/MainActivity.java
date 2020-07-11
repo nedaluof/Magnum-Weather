@@ -86,7 +86,6 @@ public class MainActivity extends BaseActivity implements MainActivityView {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         activityComponent().inject(this);
         presenter.attachView(this);
         showProgress();
@@ -94,9 +93,8 @@ public class MainActivity extends BaseActivity implements MainActivityView {
         onCreateLocationHelper();
         setupRecyclerViewCurrentDayForecast();
         setupRecyclerViewCurrentWeekForecast();
+        presenter.loadWeatherDataWithLocation(location);
         setupSwipeRefresh();
-        binding.imgBtnSettings.setOnClickListener(v -> startActivity(new Intent(this, SettingsActivity.class)));
-
     }
 
     private void setupPermission() {
