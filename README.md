@@ -2,4 +2,4 @@
 Magnum Weather ✌️ : Android Weather Application based on user location , achieve current weather , hourly forecast weather , week days forecast weather.
 
 ScreenShot
-![alt tag](https://github.com/nedaluof/Magnum-Weather/blob/master/magnumWeather.gif)
+<img src="/magnumWeather.gif" alt="drawing" width="200"/>
