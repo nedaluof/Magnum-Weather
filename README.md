@@ -5,6 +5,9 @@
 
 <img src="art/magnumweather.gif" alt="screenshot" width="300"/>
 
+## MVP Archeitecture
+<img src="art/mvp.png" alt="screenshot" width="300"/>
+
 ## Libraries Used
 * [AndroidX](https://developer.android.com/jetpack/androidx).
 * [Rxjava](https://github.com/ReactiveX/RxJava) for asynchronous tasks (fetching data from server).
