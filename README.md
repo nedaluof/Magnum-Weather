@@ -5,4 +5,9 @@
 
 <img src="art/magnumweather.gif" alt="screenshot" width="300"/>
 
-## Development
+## Libraries Used
+* [AndroidX](https://developer.android.com/jetpack/androidx).
+* [Rxjava](https://github.com/ReactiveX/RxJava)
+* [Dagger](https://google.github.io/dagger/) for dependency injection
+* [Retrofit](https://square.github.io/retrofit/)/[OkHttp](https://square.github.io/okhttp/) for networking
+* [Glide](https://github.com/bumptech/glide) for image loading
