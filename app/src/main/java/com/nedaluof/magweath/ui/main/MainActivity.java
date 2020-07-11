@@ -94,6 +94,7 @@ public class MainActivity extends BaseActivity implements MainActivityView {
         setupRecyclerViewCurrentDayForecast();
         setupRecyclerViewCurrentWeekForecast();
         presenter.loadWeatherDataWithLocation(location);
+        setupDateTime();
         setupSwipeRefresh();
     }
 
@@ -136,7 +137,7 @@ public class MainActivity extends BaseActivity implements MainActivityView {
         binding.swipeRefresh.setOnRefreshListener(() -> {
             startLocationUpdates();
             presenter.loadWeatherDataWithLocation(location);
-            setupDateTime(0);
+            setupDateTime();
             binding.swipeRefresh.setRefreshing(false);
         });
     }
@@ -163,12 +164,8 @@ public class MainActivity extends BaseActivity implements MainActivityView {
         binding.recyclerCurrentWeekForecast.setVisibility(View.GONE);
     }
 
-    private void setupDateTime(int type) {
-        if (type == 0) {
-            binding.hintToSwipe.setText(getString(R.string.hint_to_swipe).concat(Utility.getDateTimeNow()));
-        } else {
-            binding.hintToSwipe.setText(getString(R.string.hint_to_swipe_current_location).concat(Utility.getDateTimeNow()));
-        }
+    private void setupDateTime() {
+        binding.hintToSwipe.setText(getString(R.string.hint_to_swipe).concat(Utility.getDateTimeNow()));
     }
 
     @Override
