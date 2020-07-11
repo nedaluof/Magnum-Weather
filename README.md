@@ -3,6 +3,6 @@
 #### The development now are continuous in this project
 ## ScreenShot
 
-<img src="/magnumWeather.gif" alt="drawing" width="300"/>
+<img src="/art/magnumWeather.gif" alt="drawing" width="300"/>
 
 ## Development
