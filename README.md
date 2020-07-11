@@ -22,7 +22,7 @@
 ## Before Run the project you must obtain your Api Key
 * Go to [openWeatherMap](https://openweathermap.org/api) register and get your api key.
 * Go to src -> main -> java -> util -> Const class and put your api key in { String API_KEY = "your_api_key_here" }.
-* Now run project 😁.
+* Now run the project 😁.
 
 ### License
 
