@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ui.main.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="4dp"
+                android:layout_marginStart="20dp"
+                android:text="@string/app_bar_title"
+                android:textColor="@color/blue"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:ignore="RelativeOverlap" />
+
+            <ImageButton
+                android:id="@+id/img_btn_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_setting" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!--Todo need To manage @+id/hint_to_swipe -->
+                <TextView
+                    android:id="@+id/hint_to_swipe"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    tools:text="@string/hint_to_swipe" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="3dp"
+                    app:cardPreventCornerOverlap="false">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/current_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_temperature"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
+                                    android:textColor="@color/blue"
+                                    android:textSize="50sp"
+                                    tools:text="15" />
+
+                                <TextView
+                                    android:id="@+id/tv_sign"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/deg_sign"
+                                    android:textColor="@color/blue"
+                                    android:textSize="30sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="4dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/img_status"
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center"
+                                    android:background="@color/img_bg"
+                                    android:contentDescription="@string/app_name"
+                                    app:srcCompat="@drawable/ic_launcher_background" />
+
+                                <TextView
+                                    android:id="@+id/tv_description"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    tools:text="few cloud"
+                                    android:textColor="@color/blue"
+                                    android:textSize="22sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_city_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|bottom"
+                                android:layout_marginStart="50dp"
+                                android:fontFamily="sans-serif-condensed"
+                                android:textColor="@color/blue"
+                                android:textSize="46sp"
+                                android:textStyle="bold"
+                                tools:text="Amman" />
+                        </LinearLayout>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            app:cardCornerRadius="3dp"
+                            app:cardPreventCornerOverlap="false">
+
+                            <LinearLayout
+                                android:id="@+id/cd_main_info"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="2dp"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:text="@string/m_sunrise"
+                                        android:textColor="@color/blue" />
+
+                                    <TextView
+                                        android:id="@+id/cd_main_sunrise"
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="2dp"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:textColor="@color/blue"
+                                        tools:text="16/15/2020" />
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="0.5dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="4dp"
+                                    android:background="@color/blue" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="2dp"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:text="@string/m_sunset"
+                                        android:textColor="@color/blue" />
+
+                                    <TextView
+                                        android:id="@+id/cd_main_sunset"
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="2dp"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:textColor="@color/blue"
+                                        tools:text="16:00 PM" />
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="0.5dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="4dp"
+                                    android:background="@color/blue" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="2dp"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:text="@string/m_feels_like"
+                                        android:textColor="@color/blue" />
+
+                                    <TextView
+                                        android:id="@+id/cd_main_feels_like"
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="2dp"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:textColor="@color/blue"
+                                        tools:text="16" />
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="0.5dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="4dp"
+                                    android:background="@color/blue" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="2dp"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:text="@string/m_humidity"
+                                        android:textColor="@color/blue" />
+
+                                    <TextView
+                                        android:id="@+id/cd_main_humidity"
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="2dp"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:textColor="@color/blue"
+                                        tools:text="61" />
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="0.5dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="4dp"
+                                    android:background="@color/blue" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="2dp"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:text="@string/m_wind_speed"
+                                        android:textColor="@color/blue" />
+
+                                    <TextView
+                                        android:id="@+id/cd_main_wind_speed"
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="2dp"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:textColor="@color/blue"
+                                        tools:text="61" />
+
+                                </LinearLayout>
+
+                                <View
+                                    android:layout_width="0.5dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="4dp"
+                                    android:background="@color/blue" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="2dp"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:text="@string/m_wind_deg"
+                                        android:textColor="@color/blue" />
+
+                                    <TextView
+                                        android:id="@+id/cd_main_wind_deg"
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="2dp"
+                                        android:fontFamily="sans-serif-condensed"
+                                        android:textColor="@color/blue"
+                                        tools:text="61" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <ProgressBar
+                                android:id="@+id/progress_cd_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:visibility="gone" />
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <ProgressBar
+                        android:id="@+id/progress_cd_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="3dp"
+                    app:cardPreventCornerOverlap="false">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_current_day_forecast"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:scrollbars="none"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_cd_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="3dp"
+                    app:cardPreventCornerOverlap="false">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_current_week_forecast"
+                        android:layout_width="match_parent"
+                        android:layout_height="357dp"
+                        android:scrollbarStyle="outsideOverlay"
+                        android:scrollbars="none"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                        tools:listitem="@layout/item_forecast_week" />
+
+                    <ProgressBar
+                        android:id="@+id/progress_cd_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

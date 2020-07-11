@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Label ordering must match values -->
+    <array name="pref_city_option_labels">
+        <item>@string/pref_non_city_label</item>
+        <item>@string/pref_amman_city_label</item>
+        <item>@string/pref_riyadh_city_label</item>
+        <item>@string/pref_dubai_city_label</item>
+        <item>@string/pref_london_city_label</item>
+    </array>
+
+    <array name="pref_city_option_values">
+        <item>@string/pref_non_city_value</item>
+        <item>@string/pref_amman_city_value</item>
+        <item>@string/pref_riyadh_city_value</item>
+        <item>@string/pref_dubai_city_value</item>
+        <item>@string/pref_london_city_value</item>
+    </array>
+</resources>

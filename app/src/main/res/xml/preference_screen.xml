@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<CheckBoxPreference
+        android:defaultValue="@bool/pref_mode_night_default"
+        android:key="@string/pref_mode_key"
+        android:summaryOff="@string/pref_mode_false"
+        android:summaryOn="@string/pref_mode_true"
+        android:title="@string/pref_mode_title" />-->
+
+    <ListPreference
+        android:defaultValue="@string/pref_non_city_value"
+        android:entries="@array/pref_city_option_labels"
+        android:entryValues="@array/pref_city_option_values"
+        android:key="@string/pref_city_list_key"
+        android:title="@string/pref_city_list_title" />
+</androidx.preference.PreferenceScreen>

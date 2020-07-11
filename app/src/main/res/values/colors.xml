@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">@android:color/darker_gray</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="blue">#1b948e</color>
+    <color name="img_bg">#d2d6d6</color>
+    <color name="night_bg">#3d423e</color>
+    <color name="day_bg">#ffffff</color>
+</resources>

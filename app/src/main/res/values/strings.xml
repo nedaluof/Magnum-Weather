@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Mag Weather</string>
+    <string name="notification_title">Magnum Weather Request Your Location Coordinates</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="app_bar_title">Magnum Weather</string>
+    <!--Preferences Usages-->
+
+    <!--City List Preference-->
+    <string name="pref_city_list_value">Amman</string>
+    <string name="pref_city_list_title">Choose City</string>
+    <string name="pref_city_list_key">choose_city</string>
+    <!--City List Preference Labels-->
+    <string name="pref_non_city_label">- Select City -</string>
+    <string name="pref_amman_city_label">Amman</string>
+    <string name="pref_riyadh_city_label">Riyadh</string>
+    <string name="pref_dubai_city_label">Dubai</string>
+    <string name="pref_london_city_label">London</string>
+    <!--City List Preference values-->
+    <string name="pref_non_city_value">none</string>
+    <string name="pref_amman_city_value">amman</string>
+    <string name="pref_riyadh_city_value">riyadh</string>
+    <string name="pref_dubai_city_value">dubai</string>
+    <string name="pref_london_city_value">london</string>
+
+    <!--Night Mode Checkbox Preference-->
+    <string name="pref_mode_value">Day</string>
+    <string name="pref_mode_title">App Theme</string>
+    <string name="pref_mode_key">mode</string>
+    <!-- Summary for Checkbox -->
+    <string name="pref_mode_true">Day</string>
+    <string name="pref_mode_false">Night</string>
+    <string name="action_settings">Settings</string>
+    <string name="tv_feels_like">Feels Like : </string>
+    <string name="humidity">Humidity :</string>
+    <string name="pressure">Pressure :</string>
+    <string name="wind_speed">Wind Speed : </string>
+    <string name="permission_error">Error when requesting permission</string>
+
+    <string name="m_sunrise">Sunrise</string>
+    <string name="m_sunset">Sunset</string>
+    <string name="m_feels_like">Feels Like</string>
+    <string name="m_humidity">Humidity</string>
+    <string name="m_wind_speed">Wind Speed</string>
+    <string name="m_wind_deg">Wind Deg</string>
+    <string name="deg_sign">°</string>
+
+    <string name="dialogue_title">Permission Needed</string>
+    <string name="dialogue_description">the permission needed to use the functionality</string>
+    <string name="dialogue_positive_btn">Go Settings</string>
+    <string name="dialogue_negative_btn">Cancel</string>
+    <string name="hint_to_swipe">Swipe Down To Refresh &#8634; Last Update :</string>
+    <string name="hint_to_swipe_current_location">Swipe Down To Get Current Location &#8634; Last Update :</string>
+    <string name="sunrise_uni">&#x2600;</string>
+    <string name="sunset_uni">☼</string>
+    <string name="no_internet_message">No Internet Connection</string>
+    <string name="no_internet_sec_message">Try re-connect to your local network , Or Check mobile Data is Open.</string>
+
+    <string name="fragment_date">"Date : "</string>
+    <string name="fragment_time">"Time : "</string>
+</resources>
