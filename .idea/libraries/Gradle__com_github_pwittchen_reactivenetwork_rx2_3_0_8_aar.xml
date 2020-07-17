@@ -1,6 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.pwittchen:reactivenetwork-rx2:3.0.8@aar">
     <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8f3662c1bb646d1523df1be214640ae9/jetified-reactivenetwork-rx2-3.0.8/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8f3662c1bb646d1523df1be214640ae9/jetified-reactivenetwork-rx2-3.0.8/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8f3662c1bb646d1523df1be214640ae9/jetified-reactivenetwork-rx2-3.0.8/res" />
     </CLASSES>

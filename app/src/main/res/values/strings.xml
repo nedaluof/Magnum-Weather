@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Mag Weather</string>
-    <string name="notification_title">Magnum Weather Request Your Location Coordinates</string>
+    <string name="notification_title">Mag Weather Request Your Location Coordinates</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
-    <string name="app_bar_title">Magnum Weather</string>
+    <string name="app_bar_title">Mag Weather</string>
     <!--Preferences Usages-->
 
     <!--City List Preference-->

@@ -1,7 +1,7 @@
 package com.nedaluof.magweath.util;
 
 public class Const {
-    public static final String API_KEY = "your_api_key_here";
+    public static final String API_KEY = "your_api_key";
     public static final String Base_URL = "https://api.openweathermap.org/data/2.5/";
     public static final String Base_URL_IMG = "https://openweathermap.org/img/wn/";
     //location required Constants

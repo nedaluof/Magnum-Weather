@@ -23,6 +23,7 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+import com.github.pwittchen.reactivenetwork.library.rx2.ReactiveNetwork;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -45,8 +46,8 @@ import com.nedaluof.magweath.data.model.WeatherModel;
 import com.nedaluof.magweath.databinding.ActivityMainBinding;
 import com.nedaluof.magweath.ui.base.BaseActivity;
 import com.nedaluof.magweath.ui.details.DetailsActivity;
-import com.nedaluof.magweath.ui.settings.SettingsActivity;
 import com.nedaluof.magweath.util.Const;
+import com.nedaluof.magweath.util.RxUtil;
 import com.nedaluof.magweath.util.Utility;
 
 import java.text.SimpleDateFormat;
@@ -55,6 +56,10 @@ import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 import static com.nedaluof.magweath.util.Const.LOCATION_REQUEST_DISPLACEMENT;
 import static com.nedaluof.magweath.util.Const.LOCATION_REQUEST_INTERVAL;
@@ -79,6 +84,8 @@ public class MainActivity extends BaseActivity implements MainActivityView {
     private Location location;
     private boolean checkPermissionsGranted = false;
     private boolean requestingLocationUpdates;
+    //reactive network disposable
+    private Disposable disposable;
 
 
     @Override
@@ -87,8 +94,29 @@ public class MainActivity extends BaseActivity implements MainActivityView {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         activityComponent().inject(this);
+        disposable = ReactiveNetwork.observeNetworkConnectivity(this)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(connectivity -> {
+                    if (connectivity.available()) {
+                        initComponent();
+                        if (binding.swipeRefreshLayout.getVisibility() == View.GONE) {
+                            binding.swipeRefreshLayout.setVisibility(View.VISIBLE);
+                            binding.noInternetLayout.noInternetLayout.setVisibility(View.GONE);
+                        }else {
+                            binding.swipeRefreshLayout.setVisibility(View.VISIBLE);
+                        }
+                    } else {
+                        binding.swipeRefreshLayout.setVisibility(View.GONE);
+                        binding.noInternetLayout.noInternetLayout.setVisibility(View.VISIBLE);
+                    }
+                });
+    }
+
+    private void initComponent() {
         presenter.attachView(this);
         showProgress();
+        // TODO: 7/17/2020 need more handle
         setupPermission();
         onCreateLocationHelper();
         setupRecyclerViewCurrentDayForecast();
@@ -133,12 +161,12 @@ public class MainActivity extends BaseActivity implements MainActivityView {
 
 
     private void setupSwipeRefresh() {
-        binding.swipeRefresh.setColorSchemeColors(getColor(R.color.blue));
-        binding.swipeRefresh.setOnRefreshListener(() -> {
+        binding.swipeRefreshLayout.setColorSchemeColors(getColor(R.color.blue));
+        binding.swipeRefreshLayout.setOnRefreshListener(() -> {
             startLocationUpdates();
             presenter.loadWeatherDataWithLocation(location);
             setupDateTime();
-            binding.swipeRefresh.setRefreshing(false);
+            binding.swipeRefreshLayout.setRefreshing(false);
         });
     }
 
@@ -308,6 +336,7 @@ public class MainActivity extends BaseActivity implements MainActivityView {
     protected void onDestroy() {
         super.onDestroy();
         presenter.detachView();
+        RxUtil.dispose(disposable);
     }
 
 
@@ -450,4 +479,6 @@ public class MainActivity extends BaseActivity implements MainActivityView {
     public void onBackPressed() {
 
     }
+
+
 }
