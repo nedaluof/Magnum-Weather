@@ -1,6 +1,6 @@
-# Magnum-Weather
+# Mag-Weather
 ## The development now are continuous in this project
-### Magnum Weather ✌️ : Android Weather Application based on user location , achieve to provide current weather status to the user based in his location , Magnum Weather provide current weather status , hourly forecast weather status , week days forecast weather status.
+### Mag Weather ✌️ : Android Weather Application based on user location , achieve to provide current weather status to the user based in his location , Magnum Weather provide current weather status , hourly forecast weather status , week days forecast weather status.
 ## ScreenShot
 
 <img src="art/magnumweather.gif" alt="screenshot" width="300"/>
@@ -10,7 +10,7 @@
 
 <img src="art/mvp.png" alt="screenshot" width="450"/>
 
-## Libraries Used in Magnum Weather
+## Libraries Used in Mag Weather
 * [AndroidX](https://developer.android.com/jetpack/androidx).
 * [Rxjava](https://github.com/ReactiveX/RxJava) for asynchronous tasks.
 * [ReactiveNetwork](https://github.com/pwittchen/ReactiveNetwork) for observing/checking internet/network connection
