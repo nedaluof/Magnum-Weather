@@ -1,9 +1,10 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.pwittchen:reactivenetwork-rx2:3.0.8@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8f3662c1bb646d1523df1be214640ae9/jetified-reactivenetwork-rx2-3.0.8/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8f3662c1bb646d1523df1be214640ae9/jetified-reactivenetwork-rx2-3.0.8/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8f3662c1bb646d1523df1be214640ae9/jetified-reactivenetwork-rx2-3.0.8/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/beb33ea8040b504a0126d4d52ff8d1e7/jetified-reactivenetwork-rx2-3.0.8/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e63d6534a4028e0df0d0a37c9a8a2c3e/jetified-reactivenetwork-rx2-3.0.8/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e63d6534a4028e0df0d0a37c9a8a2c3e/jetified-reactivenetwork-rx2-3.0.8/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e63d6534a4028e0df0d0a37c9a8a2c3e/jetified-reactivenetwork-rx2-3.0.8/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.pwittchen/reactivenetwork-rx2/3.0.8/b15d9b8912a6ad6be0ffa8599d8a66b7e826f5fd/reactivenetwork-rx2-3.0.8-javadoc.jar!/" />

@@ -1,10 +1,7 @@
 package com.nedaluof.magweath.data;
 
-import android.util.Log;
-
 import com.nedaluof.magweath.data.PrefsManager.PreferencesHelper;
 import com.nedaluof.magweath.data.api.ApiService;
-import com.nedaluof.magweath.data.api.RetrofitClient;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -12,14 +9,16 @@ import javax.inject.Singleton;
 @Singleton
 public class DataManager {
     private PreferencesHelper preferencesHelper;
+    private ApiService client;
 
     @Inject
-    public DataManager(PreferencesHelper preferencesHelper) {
+    public DataManager(PreferencesHelper preferencesHelper, ApiService client) {
         this.preferencesHelper = preferencesHelper;
+        this.client = client;
     }
 
     public ApiService getApiHelper() {
-        return RetrofitClient.getInstance().create(ApiService.class);
+        return client;
     }
 
     public PreferencesHelper getPreferences() {

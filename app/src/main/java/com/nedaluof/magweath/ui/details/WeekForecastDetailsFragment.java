@@ -23,8 +23,8 @@ import static java.lang.Math.round;
 
 public class WeekForecastDetailsFragment extends Fragment {
     // TODO: 7/9/2020 publish data using presenter
-    private WeatherModel model;
-    private int position;
+    private final WeatherModel model;
+    private final int position;
 
     public WeekForecastDetailsFragment(WeatherModel model, int position) {
         this.model = model;

@@ -1,12 +1,11 @@
 package com.nedaluof.magweath.ui.main;
 
+import android.content.Context;
 import android.location.Location;
 import android.util.Log;
 
-import com.nedaluof.magweath.MagApplication;
 import com.nedaluof.magweath.data.DataManager;
 import com.nedaluof.magweath.data.PrefsManager.PreferencesKey;
-import com.nedaluof.magweath.di.ConfigPersistent;
 import com.nedaluof.magweath.ui.base.BasePresenter;
 import com.nedaluof.magweath.util.Const;
 import com.nedaluof.magweath.util.RxUtil;
@@ -14,19 +13,22 @@ import com.nedaluof.magweath.util.Utility;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.qualifiers.ApplicationContext;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-@ConfigPersistent
+
 public class MainActivityPresenter extends BasePresenter<MainActivityView> {
 
     private final String TAG = MainActivityPresenter.class.getSimpleName();
     private Disposable disposable;
     private DataManager dataManager;
+    private Context context;
 
     @Inject
-    public MainActivityPresenter(DataManager dataManager) {
+    public MainActivityPresenter(DataManager dataManager,
+                                 @ApplicationContext Context context) {
         this.dataManager = dataManager;
     }
 
@@ -44,13 +46,12 @@ public class MainActivityPresenter extends BasePresenter<MainActivityView> {
     }
 
 
-
     public void loadWeatherDataWithLocation(Location location) {
         checkViewAttached();
         RxUtil.dispose(disposable);
         if (location != null) {
-            dataManager.getPreferences().saveToPrefs(MagApplication.getInstance(), PreferencesKey.LATITUDE, location.getLatitude());
-            dataManager.getPreferences().saveToPrefs(MagApplication.getInstance(), PreferencesKey.LONGITUDE, location.getLongitude());
+            dataManager.getPreferences().saveToPrefs(context, PreferencesKey.LATITUDE, location.getLatitude());
+            dataManager.getPreferences().saveToPrefs(context, PreferencesKey.LONGITUDE, location.getLongitude());
             disposable = dataManager.getApiHelper().getWeatherData(location.getLatitude(), location.getLongitude(), "metric", Utility.getLanguage(), Const.API_KEY)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
@@ -81,9 +82,9 @@ public class MainActivityPresenter extends BasePresenter<MainActivityView> {
 
 
         } else if ((double) dataManager.getPreferences().
-                getFromPrefs(MagApplication.getInstance(), PreferencesKey.LATITUDE, 0.0) != 0.0) {
-            double lat = (double) dataManager.getPreferences().getFromPrefs(MagApplication.getInstance(), PreferencesKey.LATITUDE, 0.0);
-            double lon = (double) dataManager.getPreferences().getFromPrefs(MagApplication.getInstance(), PreferencesKey.LONGITUDE, 0.0);
+                getFromPrefs(context, PreferencesKey.LATITUDE, 0.0) != 0.0) {
+            double lat = (double) dataManager.getPreferences().getFromPrefs(context, PreferencesKey.LATITUDE, 0.0);
+            double lon = (double) dataManager.getPreferences().getFromPrefs(context, PreferencesKey.LONGITUDE, 0.0);
             loadWeatherDataWithLocationCoordinates(lat, lon);
         } else {
             // TODO: 7/9/2020  request location updates and turn on location

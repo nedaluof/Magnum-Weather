@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -44,7 +45,6 @@ import com.nedaluof.magweath.R;
 import com.nedaluof.magweath.data.model.MagForecastData;
 import com.nedaluof.magweath.data.model.WeatherModel;
 import com.nedaluof.magweath.databinding.ActivityMainBinding;
-import com.nedaluof.magweath.ui.base.BaseActivity;
 import com.nedaluof.magweath.ui.details.DetailsActivity;
 import com.nedaluof.magweath.util.Const;
 import com.nedaluof.magweath.util.RxUtil;
@@ -57,6 +57,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import dagger.hilt.android.AndroidEntryPoint;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
@@ -64,7 +65,9 @@ import io.reactivex.schedulers.Schedulers;
 import static com.nedaluof.magweath.util.Const.LOCATION_REQUEST_DISPLACEMENT;
 import static com.nedaluof.magweath.util.Const.LOCATION_REQUEST_INTERVAL;
 
-public class MainActivity extends BaseActivity implements MainActivityView {
+@AndroidEntryPoint
+public class MainActivity extends AppCompatActivity implements MainActivityView {
+
     private static final String TAG = "MainActivity";
     private ActivityMainBinding binding;
 
@@ -93,7 +96,6 @@ public class MainActivity extends BaseActivity implements MainActivityView {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        activityComponent().inject(this);
         disposable = ReactiveNetwork.observeNetworkConnectivity(this)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -103,7 +105,7 @@ public class MainActivity extends BaseActivity implements MainActivityView {
                         if (binding.swipeRefreshLayout.getVisibility() == View.GONE) {
                             binding.swipeRefreshLayout.setVisibility(View.VISIBLE);
                             binding.noInternetLayout.noInternetLayout.setVisibility(View.GONE);
-                        }else {
+                        } else {
                             binding.swipeRefreshLayout.setVisibility(View.VISIBLE);
                         }
                     } else {

@@ -1,12 +1,16 @@
 <component name="libraryTable">
   <library name="Gradle: com.yanzhikai:TextPathView:0.2.1@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/70324f818a8f8f65e500cb7457aa02c8/jetified-TextPathView-0.2.1/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/be8c9923891688e8b8e3bb4ec992ae17/jetified-TextPathView-0.2.1/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/450751e0bd635c7cf833098e04b1cc1c/jetified-TextPathView-0.2.1/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/70324f818a8f8f65e500cb7457aa02c8/jetified-TextPathView-0.2.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/70324f818a8f8f65e500cb7457aa02c8/jetified-TextPathView-0.2.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/70324f818a8f8f65e500cb7457aa02c8/jetified-TextPathView-0.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/be8c9923891688e8b8e3bb4ec992ae17/jetified-TextPathView-0.2.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/be8c9923891688e8b8e3bb4ec992ae17/jetified-TextPathView-0.2.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/be8c9923891688e8b8e3bb4ec992ae17/jetified-TextPathView-0.2.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/450751e0bd635c7cf833098e04b1cc1c/jetified-TextPathView-0.2.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/450751e0bd635c7cf833098e04b1cc1c/jetified-TextPathView-0.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/450751e0bd635c7cf833098e04b1cc1c/jetified-TextPathView-0.2.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.yanzhikai/TextPathView/0.2.1/a21b888add3b11a4e58febe842d3e418055000e4/TextPathView-0.2.1-javadoc.jar!/" />
