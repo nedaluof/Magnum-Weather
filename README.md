@@ -23,7 +23,7 @@
 * before run the project directly the , you need to get your API Key.
 * [Api description](https://openweathermap.org/api).
 
-## Work on Progress to use MVVM rather MVP
+## - Work on Progress to use MVVM rather MVP
 
 ## Testing 
 * .....
