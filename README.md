@@ -14,7 +14,7 @@
 * [AndroidX](https://developer.android.com/jetpack/androidx).
 * [Rxjava](https://github.com/ReactiveX/RxJava) for asynchronous tasks.
 * [ReactiveNetwork](https://github.com/pwittchen/ReactiveNetwork) for observing/checking internet/network connection
-* [Dagger](https://google.github.io/dagger/) for dependency injection.
+* [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) for dependency injection.
 * [Retrofit](https://square.github.io/retrofit/) and [OkHttp](https://square.github.io/okhttp/) for network connecting .
 * [Glide](https://github.com/bumptech/glide) for image loading.
 * [TextPathView](https://github.com/totond/TextPathView) for animated text in splash screen.
@@ -22,6 +22,8 @@
 ## Run the project
 * before run the project directly the , you need to get your API Key.
 * [Api description](https://openweathermap.org/api).
+
+## Work on Progress to use MVVM rather MVP
 
 ## Testing 
 * .....
